@@ -1,0 +1,42 @@
+from Tkinter import *
+from tkFileDialog import askopenfilename
+from tkMessageBox import *
+import webbrowser
+#space for commands
+
+root =Tk()
+
+#add input box
+e = Entry(root)
+e.pack()
+e.focus_set()
+
+#get text from input
+def getInput():
+	return e.get()
+
+def setURL():
+	if getInput() != None:
+		URL="https://boards.4chan.org/"+getInput()+"/"
+		return URL
+		
+#error messages
+def inputNull():
+	showwarning('OK','no destination designated')
+
+
+
+#setup menus
+menu = Menu(root)
+root.config(menu = menu)
+filemenu = Menu(menu)
+menu.add_cascade(label="File", menu=filemenu)
+#filemenu.add_command(label=...,command=...)to 
+filemenu.add_command(label="go to 4chan board",command = webbrowser.open(setURL()))
+filemenu.add_separator()
+filemenu.add_command(label="Exit", command=root.quit)
+
+#other menus
+
+mainloop()
+

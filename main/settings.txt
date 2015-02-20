@@ -1,0 +1,9 @@
+#use pound to skip line
+#this is to change preferances
+#put in alphabetical order
+
+#------------------------------
+[Boards] 
+a = 1
+v = 1
+vg = 1
