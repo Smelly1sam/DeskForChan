@@ -32,15 +32,18 @@ print a
 
 import configparser
 
+#read in config
 config = configparser.ConfigParser()
 print config.read('settings.txt')
 
 a = config.getboolean('Boards','a')
 print a
 
+#getting default values
 for x in range(len(lstB)):
 	varB[x] = config.getboolean('Boards',lstB[x])
 	print varB[x]
+	
 #setting = open('settings.txt','r+')
 #print setting
 
